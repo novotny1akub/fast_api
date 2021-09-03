@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Interactive UI with FastAPI</title>
+    </head>
+    <body>
+        <form method="post">
+            <label for="multiply_by">Multiply by</label><br>
+            <input type="number" name="multiply_by" value="{{ multiply_by }}"/><br><br>
+
+            {% for key in result %}
+            	<input type="text" name="ctp_names" value="{{ key }}" readonly />
+                <input type="number" name="values" value="{{ result[key] }}"/><br>
+            {% endfor %}
+            
+            <br><input type="submit">
+        </form>
+    </body>
+</html>
